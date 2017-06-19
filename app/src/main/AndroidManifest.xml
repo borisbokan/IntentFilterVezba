@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.borcha.intentfiltersezba">
+
+      <uses-permission android:name="android.permission.INTERNET"/>
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+
+        <activity android:name=".Activitys.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Activitys.VestiHronika"
+             android:parentActivityName=".Activitys.MainActivity">
+           <intent-filter>
+                 <action android:name="com.borcha.action.vesti.sve"/>
+                 <action android:name="com.borcha.action.vesti.hronika"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+             </intent-filter>
+        </activity>
+
+
+        <activity android:name=".Activitys.VestiKultura"
+            android:parentActivityName=".Activitys.MainActivity">
+            <intent-filter>
+                <action android:name="com.borcha.action.vesti.sve"/>
+                <action android:name="com.borcha.action.vesti.kultura"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".Activitys.VestiSport"
+            android:parentActivityName=".Activitys.MainActivity">
+            <intent-filter>
+                <action android:name="com.borcha.action.vesti.sve"/>
+                <action android:name="com.borcha.action.vesti.sport"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>
